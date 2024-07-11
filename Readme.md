@@ -8,7 +8,7 @@ All files and folders/directories in the Github must be lowercase, without space
 Structure of Content
 ====================
 
-**Pages** are stored in the pages folder/directory and are written in HTML (Markdown support may be added later)
+**Pages** are stored in the pages folder/directory and are written in HTML (Markdown support may be added later) (**This is subject to change**)
 
 Pages are stylized by by CSS files within the **styles** folder/directory
 

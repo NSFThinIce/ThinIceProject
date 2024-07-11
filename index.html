@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US"> <!-- The default language is the English - United States -->
     <head>
-        <meta http-equiv="refresh" content="10"/> <!-- Used in development to automatically reload this page -->
+        <meta http-equiv="refresh" content="5"/> <!-- Used in development to automatically reload this page -->
         <meta charset="utf-8"/> <!-- Using UTF-8 allows us to support characters from the vast majority of languages in the world -->
         <meta name="viewport" content="width=device-width"/> <!-- MY NOT BE NECESSARY - This forces the browser to render the page at the width of the 
                                                                 "viewport" to prevent content from being scaled down by the browser which can make some
@@ -9,7 +9,7 @@
 
         <title>On Thin Ice - Homepage</title> <!-- Set the default title for the homepage -->
         <link rel="icon" href="images/favicon.ico"> <!-- Sets the icon that will appear in the browser tab -->
-        <link href="styles/style.css" rel="stylesheet"/> <!-- The default stylesheet used to transform the webpage -->
+        <link href="styles/homepage/style.css" rel="stylesheet"/> <!-- The default stylesheet used to transform the webpage -->
     </head>
 
     <body>
@@ -17,12 +17,17 @@
          <!-- The navigation bar is stored within the nav tags to help those who use assistive technology like screen readers to view content -->
          <nav>
             <!-- Below is the contents of the navigation bar -->
-            <ul>
-                <li><a class="active" href="index.html"> Home </a></li>
-                <li><a href="pages/blog/index.html"> Blog </a></li>
-                <li><a href="pages/news/index.html"> News </a></li>
-            </ul>
+            <div class="navbar">
+                <a href="index.html"><img src="images/favicon.ico"/></a>
+                <a href="pages/blog/index.html"> Blog </a>
+                <a href="pages/news/index.html"> News </a>
+                <a>About Us</a>
+            </div>
          </nav>
+         <!-- The main content goes into here -->
+         <main>
+
+         </main>
     </body>
 
 </html>

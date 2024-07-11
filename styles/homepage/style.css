@@ -1,0 +1,90 @@
+/* 
+    Sets the font for the whole document to be Arial (if Arial is missing, then Helvetica) 
+    If the browser does not have the requested fonts, it will fallback to the generic "font family" or, 
+    collection of fonts, that implement the sans-serif definition "Glyphs [that] have stroke endings that are plain"
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#values
+*/
+* {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Adds styling to the body of the entire webpage */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #e7502b;
+}
+
+/***** Navigation Bar *****/
+.navbar {
+    display: flex; /* Converts a <nav> tag to a flex container which then converts all of the items within it to flex items */
+    flex-direction: row; /* Tells the browser to display the items in a row instead of a column */
+    align-items: center; /* Centers the items */
+    gap: 2em; /* Adds a gap between the items */
+    background-color: #6e9ccd;
+}
+
+.navbar > a {
+    text-decoration: none; /* Removes the underlines under the hyperlinks */
+    transition: background-color 0.3s ease; /* When hovering over the hyperlink, the background color will now "transition" to the new color */
+    text-align: center; /* This is supposed to center the text... */
+    width: 48px;
+    height: 48px;
+}
+
+.navbar > a:hover {
+    background-color: #6687aa; /* When hovering over an element in the navigation bar, change the background color */
+}
+
+
+
+.
+
+/**** Navigation Bar *****/ /* Disabled temporarily */ 
+/* The style for the elements within the nav tags (The navigation bar) */
+/* nav {
+    background-color: #6e9ccd;
+} */
+
+/* nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+} */
+
+/* Stylize all of the elements within <li> tags */
+/* nav li {
+    margin: 0;
+} */
+
+/* Adds styling to the anchors (<a> tags) in the navigation bar */
+/* nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: large;
+    padding: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    /* width="48px" height="48px" */ /*
+} */
+
+/* nav a:hover {
+    background-color: #5e7d9e;
+} */
+
+/* The active navigation element will have this color set to its background */
+/* .active {
+    background-color: #6e9ccd;
+} */
+
+/*
+#6e9ccd Blue from the logo 
+#e7502b Orange from the logo
+*/
