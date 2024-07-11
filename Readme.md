@@ -1,5 +1,10 @@
 # The official webpage for the Thin Ice Project
 
+Naming Conventions
+==================
+
+All files and folders/directories in the Github must be lowercase, without spaces, and without underscores (e.g. `this-is-good.html` `this_is_bad.html` `this is horrible.html`)
+
 Structure of Content
 ====================
 
