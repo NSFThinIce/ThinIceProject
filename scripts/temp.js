@@ -1,1 +1,0 @@
-// This is added so that the scripts folder gets sent to GIT 
