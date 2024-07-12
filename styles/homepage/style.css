@@ -20,7 +20,7 @@ body {
 .navbar {
     display: flex; /* Converts a <nav> tag to a flex container which then converts all of the items within it to flex items */
     flex-direction: row; /* Tells the browser to display the items in a row instead of a column */
-    gap: 2em; /* Adds a gap between the items */
+    gap: 1em; /* Adds a gap between the items */
     background-color: #fff; /* Sets the background color */
 }
 
@@ -30,6 +30,7 @@ body {
     justify-content: center; /* Centers text horizontally */
     width: auto; /* Set the width for the hyperlinks in the navbar */
     height: auto; /* Set the height of the hyperlinks in the navbar */
+    padding: .3em; /* Adds padding to the links to make them look more visually appealing */ 
 
     /* background-color: blanchedalmond; /* Added for debugging reasons */
 }
@@ -39,6 +40,7 @@ body {
     text-align: center; /* Forces text to be centered when there is more than one line */
     text-decoration: none; /* Removes the underlines under the hyperlinks */
     transition: color 0.3s ease; /* When hovering over the hyperlink, the background color will now "transition" to the new color */
+    font-size: medium;
     color: black; /* Sets the color of the text */
 }
 
@@ -49,8 +51,16 @@ body {
 /* Customize the image links within the navigation bar (The one image on the top left) */
 .navbar > a.image-link {
     font-weight: bold;
+    /* transition: background-color 0.3s ease; */
 }
 
+.navbar > a.image-link:hover {
+    /* background-color: #e7edf4; */ /* Temporarily disabled */
+}
+
+.navbar > a.image-link > img {
+    padding: .6em; /* Adds padding to the image to prevent the "On Thin Ice" text from being right next to the image */
+}
 /*
 #6e9ccd Blue from the logo 
 #e7502b Orange from the logo
