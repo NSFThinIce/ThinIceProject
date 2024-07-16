@@ -11,7 +11,6 @@ body {
 
 header {
     background: rgba(0, 0, 0, 0.6);
-    padding: 10px 0;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -20,7 +19,6 @@ header {
 footer {
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
-    padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -29,6 +27,7 @@ footer {
 
 h2 {
     text-decoration: underline;
+    padding-top: 20px;
 
 }
 
@@ -39,23 +38,29 @@ h3 {
 
 p {
     font-size:  14px;
+    padding-right: 30%;
+    padding-left: 30%;
 
 }
+
 
 
 .team-section {
     padding: 40px;
     background: rgba(0, 0, 0, 0.7);
-    
+    text-align: center;
     max-width: 100%;
-    max-height: max-content;
+    max-height: 100%;
 }
 
 
 
 .team-member {
-    Margin-top: 40px;
-    margin-bottom: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    padding-top:20px;
+    
 }
 
 .team-member a {
@@ -63,6 +68,7 @@ p {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 .team-member a:hover {
     color: #00f;

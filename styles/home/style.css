@@ -109,11 +109,11 @@ p {
 footer {
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
-    padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
     font-size: 14px;
+}
 
     /*
 #6e9ccd Blue from the logo 
