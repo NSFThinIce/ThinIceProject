@@ -1,0 +1,95 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url(https://media.cntraveler.com/photos/5678fa4567dc82253d9f1c76/master/pass/frozen-abraham-lake-canada-cr-getty.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}
+
+h2 {
+    text-decoration: underline;
+    padding-top: 20px;
+
+}
+
+h3 {
+    font-size:  16px;
+
+}
+
+p {
+    font-size:  14px;
+    padding-right: 30%;
+    padding-left: 30%;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.news-section {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    max-width: cover;
+    max-height: cover;
+}
+
+
+
+.news-addition {
+    
+    display: flex;
+    flex-direction: column;
+    padding-top:50px;
+    
+    
+    
+}
+
+.news-addition a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-participant
+{
+    padding-top: 0px;
+}
+
+
+
+
+.news-addition a:hover {
+    color: #00f;
+    text-decoration: underline;
+
+
+
+
+}
