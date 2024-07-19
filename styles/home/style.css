@@ -13,7 +13,7 @@ body {
 }
 
 /***** Navigation Bar *****/
-:root {
+:root { /* Stores global variables */
     --dist_between_a: 0.5em; /* Declares the distance between <a> (anchor) elements in the navbar */
 }
 
@@ -34,25 +34,9 @@ body {
 
 /* CSS For the <button> tag that provides the hamburger icon */
 .navbar-toggle {
-    /* display: none; /* By default, the hamburger menu is hidden */
-    float: right; /* Sets the button to follow absolute units so that it can be easily placed to a different part of the screen */
+    display: none; /* By default, the hamburger menu is hidden */
 }
 
-/* When the screen is too small (A mobile device like a phone will trigger this code) */
-@media (max-width: 34em) { /* WARNING! The amount of "em's" must be updated when the content in the navbar is updated! */
-    .navbar, .navbar>.other-links {
-        flex-direction: column; /* Changes the direction of the flexbox to column (vertical) */
-    }
-    
-    .navbar a {
-        justify-content: flex-start; /* Makes it so all of the elements start at the right side of the screen */
-        flex: 1; /* Ensures the spacing between each element stays the same */
-    }
-
-    .navbar>.other-links {
-        display: none; /* Hides the other links so that they are, by default, hidden on mobile devices */
-    }
-}
 
 /* Customize the text-links within the navigation bar */
 .navbar a.text-link {
@@ -78,11 +62,49 @@ body {
 }
 
 .navbar a.image-link>img {
-    min-width: 48px; /* Ensure the images width is at least 48 pixels */
-    min-height: 48px; /* Ensure the images height is at least 48 pixels */
+    min-width: 48px; /* Ensure the image's width is at least 48 pixels */
+    min-height: 48px; /* Ensure the image's height is at least 48 pixels */
     padding: 0 calc(var(--dist_between_a) * 2) 0 0; /* Adds padding to the image to prevent the "On Thin Ice" text from being right next to the image */
 }
 
+/* When the screen is too small (A mobile device like a phone will trigger this code) */
+@media (max-width: 34em) { /* WARNING! The amount of "em's" must be updated when the content in the navbar is updated! */
+    .navbar, .navbar>.other-links {
+        flex-direction: column; /* Changes the direction of the flexbox to column (vertical) */
+        flex: 1; /* Ensures the vertical distance between all of the items is the same */
+        align-items: flex-start; /* Aligns all of the content to the left side of the screen */
+    }
+
+    .navbar>.other-links {
+        display: none; /* Hides the other links so that they are, by default, hidden on mobile devices */
+    }
+    
+    .hamburger-and-home-button {
+        display: flex; /* Turns this div into a flex container */
+        flex-direction: row; /* Forces the home and hamburger menu to be placed horizontally */
+    }
+
+    /* The button in the navbar*/
+    .navbar-toggle {
+        display: flex; /* Turns the contents inside the button into flex items */
+        align-items: center; /* Centers the image inside the flex container */
+        background: none; /* Removes the default background added to buttons */
+        cursor: pointer; /* When the cursor is above the button, it will turn it into a cursor */
+        border: none; /* Removes the default border added to buttons */
+        transition: background-color 0.3s ease; /* Describes how the background color would change for the hamburger menu */
+        padding: var(--dist_between_a); /* TEMP Used to try to get the hamburger menu to be aligned with the text below it */
+
+        img {
+            width: 27px; /* Sets the size of the image */
+            height: 27px;
+        }
+    }
+
+    .navbar-toggle:hover {
+        background-color: #2263a949; /* The background color that the hamburger menu transitions to */ 
+    }
+
+}
 
 .container {
     padding: 20px;

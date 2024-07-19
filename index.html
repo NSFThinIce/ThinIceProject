@@ -17,21 +17,29 @@
          <nav>
             <!-- Below is the contents of the navigation bar -->
             <div class="navbar">
-                <a id="home-page" class="text-link image-link" href="#home">
-                    <img src="images/favicon.ico"/>
-                    <div class="inner-text">Thin Ice Project</div>
-                </a>
-                <a id="team-page" class="text-link" href="#team"> Team </a>
-                <a id="news-page" class="text-link" href="#news"> News </a>
-                <a id="pub-page" class="text-link" href="#publications&amp;presentations"> Publications & Presentations </a>
+                <div class="hamburger-and-home-button">
+                    <button class="navbar-toggle">
+                        <img src="images/bars-solid.svg" alt="Three vertical bars used to open the menu"/>
+                    </button>
+                    <a id="home-page" class="text-link image-link" href="index.html">
+                        <img src="images/favicon.ico"/>
+                        Thin Ice Project
+                    </a>
+                </div>
+                <div class="other-links">
+                    <a id="team-page" class="text-link" href="#team">Team</a>
+                    <a id="news-page" class="text-link" href="#news">News</a>
+                    <a id="pub-page" class="text-link" href="#publications&amp;presentations">Publications & Presentations</a>
+                </div>
             </div>
          </nav>
          <!-- The main content goes into here -->
          <main id="content">
             
          </main>
+         <!-- Scripts are referenced here -->
          <script src="scripts/script.js"></script>
-         <script src="scripts/toggle_navbar_view.js"></script>
+         <script src="scripts/toggle-navbar-view.js"></script>
     </body>
 
 </html>
