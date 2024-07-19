@@ -1,7 +1,7 @@
 /* 
-    Sets the font for the whole document to be Arial (if Arial is missing, then Helvetica) 
-    If the browser does not have the requested fonts, it will fallback to the generic "font family" or, 
-    collection of fonts, that implement the sans-serif definition "Glyphs [that] have stroke endings that are plain"
+Sets the font for the whole document to be Arial (if Arial is missing, then Helvetica) 
+If the browser does not have the requested fonts, it will fallback to the generic "font family" or, 
+collection of fonts, that implement the sans-serif definition "Glyphs [that] have stroke endings that are plain"
     https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#values
 */
 
@@ -17,13 +17,13 @@ body {
     --dist_between_a: 0.5em; /* Declares the distance between <a> (anchor) elements in the navbar */
 }
 
-.navbar {
+.navbar, .navbar>.other-links {
     display: flex; /* Converts a <nav> tag to a flex container which then converts all of the items within it to flex items */
     flex-direction: row; /* Tells the browser to display the items in a row instead of a column */
     background-color: #fff; /* Sets the background color of the navbar */
 }
 
-.navbar>a {
+.navbar a {
     display: flex; /* Converts each hyperlink to a flex container so that their contents (text and images) become flex items */
     align-items: center; /* Centers text vertically when there is one line */
     justify-content: center; /* Centers text horizontally */
@@ -32,23 +32,30 @@ body {
     padding: var(--dist_between_a); /* Sets the padding of the <a> tag in all directions to dist_between_a */
 }
 
-/* When the screen is too small */
+/* CSS For the <button> tag that provides the hamburger icon */
+.navbar-toggle {
+    /* display: none; /* By default, the hamburger menu is hidden */
+    float: right; /* Sets the button to follow absolute units so that it can be easily placed to a different part of the screen */
+}
+
+/* When the screen is too small (A mobile device like a phone will trigger this code) */
 @media (max-width: 34em) { /* WARNING! The amount of "em's" must be updated when the content in the navbar is updated! */
-    .navbar {
+    .navbar, .navbar>.other-links {
         flex-direction: column; /* Changes the direction of the flexbox to column (vertical) */
     }
-
-    .navbar>a {
-        padding: 0.25em 0; /* Removes the padding from the right & left but adds padding to the bottom */
+    
+    .navbar a {
+        justify-content: flex-start; /* Makes it so all of the elements start at the right side of the screen */
+        flex: 1; /* Ensures the spacing between each element stays the same */
     }
 
-    .navbar#other-links {
-        display: none;
+    .navbar>.other-links {
+        display: none; /* Hides the other links so that they are, by default, hidden on mobile devices */
     }
 }
 
 /* Customize the text-links within the navigation bar */
-.navbar>a.text-link {
+.navbar a.text-link {
     text-align: center; /* Forces text to be centered when there is more than one line */
     text-decoration: none; /* Removes the underlines under the hyperlinks */
     transition: color 0.3s ease; /* When hovering over the hyperlink, the background color will now "transition" to the new color */
@@ -56,25 +63,26 @@ body {
     color: black; /* Sets the color of the text */
 }
 
-.navbar>a.text-link:hover {
+.navbar a.text-link:hover {
     color: #2263a9; /* When hovering over an element in the navigation bar, change the background color */
 }
 
 /* Customize the image links within the navigation bar (The one image on the top left) */
-.navbar>a.image-link {
+.navbar a.image-link {
     font-weight: bold; /* Set the font in the image to 
     /* transition: ?? TODO: Add an effect to the image */
 }
 
-.navbar>a.image-link:hover {
+.navbar a.image-link:hover {
     /* TODO: Add an effect to the image */
 }
 
-.navbar>a.image-link>img {
+.navbar a.image-link>img {
     min-width: 48px; /* Ensure the images width is at least 48 pixels */
     min-height: 48px; /* Ensure the images height is at least 48 pixels */
     padding: 0 calc(var(--dist_between_a) * 2) 0 0; /* Adds padding to the image to prevent the "On Thin Ice" text from being right next to the image */
 }
+
 
 .container {
     padding: 20px;
