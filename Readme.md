@@ -16,4 +16,4 @@ Structure of Repository
 
 **Images** and other static content is stored in the images folder/directory
 
-**Scripts** are stored in the scripts folder/directory
+**Scripts** are stored in the scripts folder/directory. Scripts that correspond to specific sub-pages will be stored in a folder with the exact name as the sub-page

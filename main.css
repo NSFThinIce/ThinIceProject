@@ -94,7 +94,7 @@ body {
         cursor: pointer; /* When the cursor is above the button, it will turn it into a cursor */
         border: none; /* Removes the default border added to buttons */
         transition: background-color 0.3s ease; /* Describes how the background color would change for the hamburger menu */
-        padding: var(--dist_between_a); /* TEMP Used to try to get the hamburger menu to be aligned with the text below it */
+        padding: var(--dist_between_a); /* Used to try to get the hamburger menu to be aligned with the text below it */
 
         img {
             width: 27px; /* Sets the size of the image */
