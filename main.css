@@ -1,3 +1,5 @@
+/* The main CSS for the single page HTML */
+
 /* 
 Sets the font for the whole document to be Arial (if Arial is missing, then Helvetica) 
 If the browser does not have the requested fonts, it will fallback to the generic "font family" or, 
@@ -105,40 +107,3 @@ body {
     }
 
 }
-
-.container {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-h1 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 14px;
-}
-
-    /*
-#6e9ccd Blue from the logo 
-#e7502b Orange from the logo
-*/
