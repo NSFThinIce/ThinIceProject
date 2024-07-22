@@ -9,6 +9,7 @@
         <title>Thin Ice Project - Homepage</title> <!--  Set the default title for the homepage -->
         <link rel="icon" href="images/favicon.ico"> <!-- Sets the icon that will appear in the browser tab -->
         <link href="main.css" rel="stylesheet"/> <!-- The default stylesheet used to transform the webpage -->
+        <link class="css-page-link" rel="stylesheet"> <!-- This link is used to store the individual stylesheets of each page-->
     </head>
 
     <body>
@@ -21,7 +22,9 @@
                     <button class="navbar-toggle">
                         <img src="images/navbar/bars-solid.svg" alt="Three vertical bars used to open the menu"/>
                     </button>
-                    <a id="home-page" class="text-link image-link" href="index.html">
+                    <!-- A note: All links (href) cannot point to another page (index.html) because it will cause a change of the page
+                     which will most likely cause any existing fetches (fetch(url).then(blah)) in scripts to fail! -->
+                    <a id="home-page" class="text-link image-link" href="#home">
                         <img src="images/favicon.ico"/>
                         Thin Ice Project
                     </a>
@@ -34,12 +37,12 @@
             </div>
          </nav>
          <!-- The main content goes into here -->
-         <main id="content">
+         <main class="main-content">
             
          </main>
          <!-- Scripts are referenced here -->
-         <script src="scripts/script.js"></script>
-         <script src="scripts/toggle-navbar-view.js"></script>
+         <script src="scripts/page-navigation-handler.js"></script>
+         <script src="scripts/navbar/toggle-navbar-view.js"></script>
     </body>
 
 </html>
