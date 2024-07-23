@@ -11,10 +11,10 @@
 
     // The mapping of each id to a sub-page's directory/folder
     const pageMapping = {
-        ["home-page"]: "/sub-pages/home",
-        ["team-page"]: "/sub-pages/team",
-        ["news-page"]: "/sub-pages/news",
-        ["pub-page"]: "/sub-pages/pub-and-pre"
+        ["home-page"]: "/ThinIceProject/sub-pages/home",
+        ["team-page"]: "/ThinIceProject/sub-pages/team",
+        ["news-page"]: "/ThinIceProject/sub-pages/news",
+        ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre"
     }
 
     // Handles the fetching of sub-pages and injecting in the right location
@@ -63,3 +63,6 @@
         })
     })
 }
+
+// TODO! Have it so when the page reloads, the content stays
+// Also, have it so that page starts at the sub-page "home"
