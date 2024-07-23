@@ -9,33 +9,22 @@ body {
     padding: 0;
 }
 
-header {
-    background: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
 
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 14px;
-}
 
+/*sets h2 to be underlined*/
 h2 {
     text-decoration: underline;
     
 
 }
 
+/*set h3 font size to 16px*/
 h3 {
     font-size:  16px;
 
 }
 
+/*sets p's fontsize to 14px and the top margin to 6px*/
 p {
     font-size:  14px;
     margin-top: 6px;
@@ -43,65 +32,30 @@ p {
 
 }
 
-
-
+/*makes a container with padding of 40px, slighly transparent backround, aligns the items to the center
+and makes the container cover the whole body*/
 .team-section {
-    padding: 40px;
+    padding: 50px;
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
-    max-width: cover;
-    max-height: cover;
-}
-
-
-
-.team-member {
-    
     display: flex;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top:50px;
-    
-    
+    height:100%
     
 }
 
-.team-content{
+
+/*makes a container that has a top padding of 20px and a
+max width of 1000px*/
+.team-member {
     
-    max-width: 500px;
-    max-height: fit-content;
-}
-
-.team-member a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    padding-top:20px;
+    max-width: 1000px;
+    
 }
 
 
 
-.team-participant
-{
-    padding-top: 0px;
-}
-
-
-
-
-
-
-.team-member a:hover {
-    color: #00f;
-    text-decoration: underline;
-
-
-
-
-
-}
-
-#first-team-member{
-    padding: 25px 0px 0px 0px;
-}

@@ -9,87 +9,54 @@ body {
     padding: 0;
 }
 
-header {
-    background: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
 
-footer {
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 14px;
-}
 
+/*sets h2 to be underlined*/
 h2 {
     text-decoration: underline;
-    padding-top: 20px;
+    
 
 }
 
+/*set h3 font size to 16px*/
 h3 {
     font-size:  16px;
 
 }
 
+/*sets p's fontsize to 14px and the top margin to 6px*/
 p {
     font-size:  14px;
-    padding-right: 30%;
-    padding-left: 30%;
+    margin-top: 6px;
+    
 
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-.news-section {
-    padding: 40px;
+/*makes a container with padding of 40px, slighly transparent backround, aligns the items to the center
+and makes the container cover the whole body*/
+.team-section {
+    padding: 50px;
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
-    max-width: cover;
-    max-height: cover;
-}
-
-
-
-.news-addition {
-    
     display: flex;
     flex-direction: column;
-    padding-top:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%
     
+}
+
+
+/*makes a container that has a top padding of 20px and a
+max width of 1000px*/
+.team-member {
     
+    padding-top:20px;
+    max-width: 1000px;
     
 }
 
-.news-addition a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.news-participant
-{
-    padding-top: 0px;
-}
 
 
-
-
-.news-addition a:hover {
-    color: #00f;
-    text-decoration: underline;
-
-
-
-
-}
+ 
