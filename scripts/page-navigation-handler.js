@@ -1,8 +1,5 @@
+// To not pollute the global namespace, {} are used to keep all of the constants (const) within this scope
 {
-    // Holds a list of all of the clickable items that should return a new content onto the single page
-    // The below code is pending deletion TODO delete it if it's not necessary
-    const navBarLinks = document.querySelectorAll(".text-link", ".image-link")
-
     // The HTML tag that contains the main content for each sub-page
     const mainContentElement = document.querySelector(".main-content")
 
@@ -12,7 +9,7 @@
 
     // The mapping of each id to a sub-page's directory/folder
     const pageMapping = {
-        ["home-page"]: "/sub-pages/home", // Must be updated before being deployed!
+        ["home-page"]: "/sub-pages/home", // TODO Must be updated before being deployed!
         ["team-page"]: "/sub-pages/team", // Must be updated before being deployed!
         ["news-page"]: "/sub-pages/news", // Must be updated before being deployed!
         ["pub-page"]: "/sub-pages/pub-and-pre" // Must be updated before being deployed!
@@ -23,7 +20,7 @@
         // Throws an error if the cssPageID is not listed in the pageMapping object
         if (!Object.hasOwn(pageMapping, cssPageID)) {
             throw new Error(`The page ID ${cssPageID} does not map to any location.`)
-        } // A 404 should be shown instead!!!! TODO
+        }
 
         const mappedLocation = pageMapping[cssPageID]
 
@@ -57,15 +54,8 @@
             })
     }
 
-    // When one of the links (<a> tags) is clicked on, the subPageFetcher function is called 
-    // This code might not be needed
-    // navBarLinks.forEach(link => {
-    //     link.addEventListener("click", _ => {
-    //         subPageFetcher(link.id)
-    //     })
-    // })
-
-    function fetchPageID(pageID) {
+    // Receives a pageID and then calls subPageFetcher with the actual name of the sub-page
+    function fetchSubPageFromID(pageID) {
         // The only cases for the hash that are accepted is when it says:
         //      #news: news sub-page
         //      #publications&presentations: publications and presentations sub-page
@@ -88,8 +78,9 @@
                 subPageFetcher("home-page")
                 break
             default:
-                // A 404 should be shown as well! TODO
-                throw new Error(`The page ${pageURL} cannot be automatically fetched. Did you follow the process for adding pages? (Currently does not exist)`)
+                if (DEBUG === true) {
+                    console.log(`The page ID ${pageID} is not currently recognized as a valid page`)
+                }
         }
     }
 
@@ -98,7 +89,7 @@
         console.log("WQDQWDQWDQW")
         // The hash or page ID (#) for the current window is used to determine the current sub-page
         const pageID = window.location.hash
-        fetchPageID(pageID)
+        fetchSubPageFromID(pageID)
     })
 
     // When the user interacts with the page by pressing on a link, pressing on the back button, forward button, etc
@@ -107,6 +98,6 @@
     window.addEventListener("popstate", _ => {
         // The hash or page ID (#) for the current window is used to determine the current sub-page
         const pageID = window.location.hash
-        fetchPageID(pageID)
+        fetchSubPageFromID(pageID)
     })
 }
