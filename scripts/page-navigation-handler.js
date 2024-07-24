@@ -1,3 +1,6 @@
+// This script is used to automatically keep the current sub-page visible even when the user:
+// reloads the page, go backs or forwards, or manually changes the URL
+
 // To not pollute the global namespace, {} are used to keep all of the constants (const) within this scope
 {
     // The HTML tag that contains the main content for each sub-page
