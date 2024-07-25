@@ -89,7 +89,6 @@
 
     // When the page loads, the subPageFetcher should set the current sub-page based off the hash (#) in the url
     document.addEventListener("DOMContentLoaded", _ => {        
-        console.log("WQDQWDQWDQW")
         // The hash or page ID (#) for the current window is used to determine the current sub-page
         const pageID = window.location.hash
         fetchSubPageFromID(pageID)
