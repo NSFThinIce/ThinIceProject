@@ -1,0 +1,63 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url(https://media.cntraveler.com/photos/5678fa4567dc82253d9f1c76/master/pass/frozen-abraham-lake-canada-cr-getty.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*sets h2 to be underlined*/
+h2 {
+    text-decoration: underline;
+    
+
+}
+
+/*set h3 font size to 16px*/
+h3 {
+    font-size:  16px;
+
+}
+
+/*sets p's fontsize to 14px and the top margin to 6px*/
+p {
+    font-size:  14px;
+    margin-top: 6px;
+    
+
+}
+
+/*makes a container with padding of 40px, slighly transparent backround, aligns the items to the center
+and makes the container cover the whole body*/
+.team-section {
+    padding: 100px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    
+    
+}
+
+
+/*makes a container that has a top padding of 20px and a
+max width of 1000px*/
+.team-member {
+    
+    padding-top:20px;
+    max-width: 1000px;
+    
+}
+
+
+
+ 

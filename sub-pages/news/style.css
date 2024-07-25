@@ -35,7 +35,7 @@ p {
 /*makes a container with padding of 40px, slighly transparent backround, aligns the items to the center
 and makes the container cover the whole body*/
 .team-section {
-    padding: 50px;
+    padding: 100px;
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
     display: flex;
