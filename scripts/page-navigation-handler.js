@@ -16,10 +16,66 @@
         ["team-page"]: "/sub-pages/team", // Must be updated before being deployed!
         ["news-page"]: "/sub-pages/news", // Must be updated before being deployed!
         ["pub-page"]: "/sub-pages/pub-and-pre" // Must be updated before being deployed!
+    }  
+
+
+    // Grabs news-items from news-items.html
+    // Then store all of the news-item-containers items into an array
+    // Sort the array based on the date of the item
+
+    // Is used to parse the HTML loaded from the news-items.html file
+    const HTMLparser = new DOMParser()
+
+    // Handles the dynamic creation of the news sub-page
+    async function newsLoader() {
+        try {
+            const response = await fetch("/sub-pages/news/content/news-items.html")
+            
+            if (!response.ok) // If the response is not ok, then throw an error
+                throw new Error(`Error: ${response.status}`)
+            
+            const newsItemsHTML = response.text()
+
+            const newsItemsDoc = HTMLparser.parseFromString(newsItemsHTML, "text/html")
+
+            const allNewsItems = newsItemsDoc.querySelectorAll(".news-item-list .news-item-container")
+            
+            // Converts the allNewItems node list to an array so that it can be sorted
+            const allNewsItemsArr = Array.from(allNewsItems)
+
+            // Sort the array so that the most recent news-items are on top
+            allNewsItemsArr.sort((element1, element2) => {
+                const dateElement1 = element1.querySelector(".news-item-date") // Selects the element, now just sort by dates!
+                const dateElement2 = element2.querySelector(".news-item-date") // /\
+                
+                try {
+                    // As long as the dates are in the format  YYYY-MM-DD, the Date.parse function will work
+                    // dateElement1 is an HTML element, textContent returns the text between the HTML tags, .replace(/\s+/g, '') replaces all of the
+                    // strings that match the RegEx /\s+/g (all whitespace characters) with nothing (that's what the '' is)
+                    // This is to remove any \n (newlines) or any random spaces that are placed between the tags 
+                    const dateObj1 = Date.parse(`${dateElement1.textContent.replace(/\s+/g, '')} UTC-4`)
+                    const dateObj2 = Date.parse(`${dateElement2.textContent.replace(/\s+/g, '')} UTC-4`)
+
+                    // There are 3 cases: If the dates are equal, then there order does not matter
+                    // If date 2 is greater than date 1, then date 2 should come before date
+                    // Else, if date 2 is less than date 1, then date 2 should be after date 1
+                    return dateObj1 - dateObj2
+                } catch (err) { // Added just in-case an improper date is inputted into one of the news items
+                    console.error(err)
+                }
+            })
+
+            // Now for each element, load them onto the webpage!
+            allNewsItemsArr.forEach(element => {
+
+            })
+        } catch (err) {
+            console.error(err.message)
+        }
     }
 
     // Handles the fetching of sub-pages and injecting in the right location
-    function subPageFetcher(cssPageID) {
+    function subPageFetcher(cssPageID, isNewsSubPage) {
         // Throws an error if the cssPageID is not listed in the pageMapping object
         if (!Object.hasOwn(pageMapping, cssPageID)) {
             throw new Error(`The page ID ${cssPageID} does not map to any location.`)
@@ -48,12 +104,17 @@
                 // Set the CSS for the sub-page
                 stylesheetLink.href = `${mappedLocation}/style.css`
 
-                // Append the link to the head of the HTML document
+                // Inject the sub-page's HTML into the main section of the webpage
                 mainContentElement.innerHTML = htmlContent
+
+                // Then the news-loader should be called to dynamically build the page
+                if (isNewsSubPage === true) {
+                    newsLoader()
+                }
             })
             .catch(err => {
                 // When an error occurs
-                console.log(err)
+                console.error(err)
             })
     }
 
@@ -67,18 +128,18 @@
         //      nothing (""): should redirect to the home page by default and the hash must be updated
         switch (pageID) {
             case "#news":
-                subPageFetcher("news-page")
+                subPageFetcher("news-page", true)
                 break
             case "#publications&presentations":
-                subPageFetcher("pub-page")
+                subPageFetcher("pub-page", false)
                 break
             case "#team":
-                subPageFetcher("team-page")
+                subPageFetcher("team-page", false)
                 break
             case "":
                 window.location.hash = "home" // Sets the hash to #home
             case "#home":
-                subPageFetcher("home-page")
+                subPageFetcher("home-page", false)
                 break
             default:
                 if (DEBUG === true) {
