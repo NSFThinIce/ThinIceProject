@@ -3,10 +3,13 @@
 body {
     font-family: Arial, sans-serif;
     color: #fff;
-    background: url(https://media.cntraveler.com/photos/5678fa4567dc82253d9f1c76/master/pass/frozen-abraham-lake-canada-cr-getty.jpg);
+    background-image: url("../../images/home/Mohonk.jpg");
     background-size: cover;
     margin: 0;
     padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
 }
 
 
