@@ -41,6 +41,7 @@ button.news-archive-button:hover {
     text-align: center; /* Centers the text */
     gap: .75em 0em; /* Sets a gap between the elements */
     padding: 1em 0 5em 0; /* Adds padding to the bottom of each news item to make them look separate */
+    
 }
 
 .news-item-container .news-item-title {
@@ -48,10 +49,19 @@ button.news-archive-button:hover {
     font-weight: bold; /* Makes the font bold */
 }
 
-body {
+
+
+img {
     background-image: url("../../images/home/Mohonk.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* backdrop-filter: blur(10px); */
+    filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
 }
