@@ -1,66 +1,57 @@
-/* style.css */
+.news-injection-point {
+    color: #fff; /* Sets the default font color to white */
+    font-size: medium; /* Sets the default font size to medium */
+    display: flex; /* Turns this div into a flex container which allows us to have the 
+                      browser automatically manage the formatting of content */ 
+    flex-direction: column; /* Sets the direction to column (Up/down) */
+    justify-content: center; /* Centers each news-item */
+}
+
+.buttons-container {
+    background-color: #00000020;
+    position: sticky; /* Makes it so the buttons come down the page while scrolling */
+    top: 0px; /* Keeps the elements 0px from the bottom of the page */
+    display: flex; /* Makes it so the web broswer automatically orders items on the screen for us */
+    flex-direction: row; /* Sets the direction of the flex container to row (left/right) */
+    justify-content: flex-start; /* Makes it so the content starts from the left side */
+    gap: 0em 1em; /* Adds a 1em horizontal gap between elements */
+    flex-wrap: wrap; /* Makes it so that the buttons will try there best to stay in the flex container */
+}
+
+button.news-archive-button {
+    background: none; /* Sets the background color of the buttons */
+    border: none; /* Removes the border from the buttons */ 
+    color: white; /* Sets the default color for the fonts */
+    font-size: medium; /* Sets the defualt font size */
+}
+
+button.news-archive-button.current-news-page {
+    font-weight: bold;
+}
+
+button.news-archive-button:hover {
+    cursor: pointer; /* When the user hovers over the buttons, change the cursor to a pointer to show the user that they can click on this element */
+    font-weight: bold; /* Makes the font bold when it's being hovered over */
+}
+
+.news-item-container {
+    display: flex; /* Makes it so the web broswer automatically orders items on the screen for us */
+    flex-direction: column; /* Sets the direction to column (Up/down) */
+    justify-content: center; /* Centers the items */
+    text-align: center; /* Centers the text */
+    gap: .75em 0em; /* Sets a gap between the elements */
+    padding: 1em 0 5em 0; /* Adds padding to the bottom of each news item to make them look separate */
+}
+
+.news-item-container .news-item-title {
+    font-size: xx-large; /* Sets the font size */
+    font-weight: bold; /* Makes the font bold */
+}
 
 body {
-    font-family: Arial, sans-serif;
-    color: #fff;
     background-image: url("../../images/home/Mohonk.jpg");
     background-size: cover;
-    margin: 0;
-    padding: 0;
     background-position: center;
     background-repeat: no-repeat;
     backdrop-filter: blur(10px);
 }
-
-
-
-/*sets h2 to be underlined*/
-h2 {
-    text-decoration: underline;
-    
-
-}
-
-/*set h3 font size to 16px*/
-h3 {
-    font-size:  16px;
-
-}
-
-/*sets p's fontsize to 14px and the top margin to 6px*/
-p {
-    font-size:  14px;
-    margin-top: 6px;
-    
-
-}
-
-/*makes a container with padding of 40px, slighly transparent backround, aligns the items to the center
-and makes the container cover the whole body*/
-.team-section {
-    padding: 100px;
-    background: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100%;
-    
-    
-}
-
-
-/*makes a container that has a top padding of 20px and a
-max width of 1000px*/
-.team-member {
-    
-    padding-top:20px;
-    max-width: 1000px;
-    
-}
-
-
-
- 

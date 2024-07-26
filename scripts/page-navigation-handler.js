@@ -16,7 +16,7 @@
         ["team-page"]: "/sub-pages/team", // Must be updated before being deployed!
         ["news-page"]: "/sub-pages/news", // Must be updated before being deployed!
         ["pub-page"]: "/sub-pages/pub-and-pre" // Must be updated before being deployed!
-    }  
+    }
 
 
     // Grabs news-items from news-items.html
@@ -26,20 +26,151 @@
     // Is used to parse the HTML loaded from the news-items.html file
     const HTMLparser = new DOMParser()
 
+    // Takes an array of news items (HTML elements) and returns an array of arrays of news items ([[HTML Elements], [HTML Elements], [HTML Elements]])
+    function packNewsItems(arr) {
+        // Currently, the packing method is >>DUMB<<; every 7 elements is one pack, maybe a newer packing method shall be used?
+        const packedArr = []
+
+        // Loops through all of the elements
+        for (let i = 0; i < arr.length; i++) {
+            // Holds the contents for the current news-page
+            const newsPageContainer = []
+
+            for (let j = i; j <= i + 7; j++) {
+                // Make sure there are still items in the array
+                // If there are no more items, then stop the loop
+                if (arr[j] === undefined)
+                    break
+
+                // One news item
+                const newsItem = arr[j];
+
+                // Add the news item to the container of news items for this page
+                newsPageContainer.push(newsItem)
+            }
+
+            // Push the container of news items to the packed array
+            packedArr.push(newsPageContainer)
+            // Update i when 7 elements are packed into the array
+            i = i + 7
+        }
+
+        return packedArr
+    }
+    
+    // Handles the "rendering" of the news pages
+    // Takes an array of news items and places them onto the webpage
+    function renderNewsPages(newsItemsArr) {
+        // Where the news items will be injected to
+        const newsInjectionPoint = document.querySelector(".news-injection-point")
+        // Delete the old news items, if they exist
+        const oldNewsItems = document.querySelectorAll(".news-item-container")
+
+        if (oldNewsItems !== null) {
+            oldNewsItems.forEach(newsItemContainer => {
+                newsInjectionPoint.removeChild(newsItemContainer)
+            })
+        }
+
+        // Add the new news items
+        newsItemsArr.forEach(newsItem => {
+            const newsContainer = document.createElement("div")
+            newsContainer.classList.add("news-item-container")
+
+            // Query the elements so that their contents can be inputted into the new elements created below
+            const newsDate = newsItem.querySelector(".news-item-date")
+            const newsAuthors = newsItem.querySelector(".news-item-authors")
+            const newsContent = newsItem.querySelector(".news-item-content")
+            const newsTitle = newsItem.querySelector(".news-item-title")
+
+            // Create the elements to be loaded onto the page
+            const titleElement = document.createElement("div")
+            titleElement.classList.add("news-item-title")
+            const dateElement = document.createElement("div")
+            dateElement.classList.add("news-item-date")
+            const authorsElement = document.createElement("div")
+            authorsElement.classList.add("news-item-authors")
+            const contentElement = document.createElement("div")
+            contentElement.classList.add("news-item-content")
+
+            // Set the inner HTML of the new elements to the inner HTML of the queried elements
+            titleElement.innerHTML = newsTitle.innerHTML
+            dateElement.innerHTML = newsDate.innerHTML
+            authorsElement.innerHTML = newsAuthors.innerHTML
+            contentElement.innerHTML = newsContent.innerHTML
+
+            // Add the items to the container
+            newsContainer.appendChild(titleElement)
+            newsContainer.appendChild(dateElement)
+            newsContainer.appendChild(contentElement)
+            newsContainer.appendChild(authorsElement)
+            
+            newsInjectionPoint.appendChild(newsContainer)
+        })
+    }
+
+    // Constructs the buttons that will load up the individual news pages
+    function archiveButtonsRenderer(newsItemsArr) {
+        // This element will hold all of the buttons
+        const buttonsContainer = document.createElement("div")
+        buttonsContainer.classList.add("buttons-container")
+        buttonsContainer.textContent = "News:"
+
+        for (let i = 0; i < newsItemsArr.length; i++) {
+            const newsItems = newsItemsArr[i]
+            // The first element will be used to set the text in the button
+            const newsItem = newsItems[0]
+            
+            const newsArchiveButton = document.createElement("button")
+            newsArchiveButton.classList.add("news-archive-button")
+
+            // The first list of newsItems is, by default, the first page loaded so it's the current news page
+            if (i === 0) {
+                newsArchiveButton.classList.add("current-news-page")
+            }
+            
+            // newsArchiveButton is an HTML element, textContent returns the text between the HTML tags, .replace(/\s+/g, '') replaces all of the
+            // strings that match the RegEx /\s+/g (all whitespace characters) with nothing (that's what the '' is)
+            // This is to remove any \n (newlines) or any random spaces that are placed between the tags
+            // After that, the leftover text is inputted into the newsArchivesButton's textContent property to set the name of 
+            newsArchiveButton.textContent = newsItem.querySelector(".news-item-date").textContent.replace(/\s+/g, '')
+            
+            // When the button is clicked, it will execute this function
+            newsArchiveButton.addEventListener("click", _ => {
+                // The current news page
+                const currentNewsPage = document.querySelector("button.news-archive-button.current-news-page")
+                // Remove the class that says this is the current news page
+                currentNewsPage.classList.remove("current-news-page")
+
+                // Add the class to the clicked on news
+                newsArchiveButton.classList.add("current-news-page")
+
+                renderNewsPages(newsItems)
+            })
+            
+            buttonsContainer.appendChild(newsArchiveButton)
+            
+        }
+
+        // Add the buttons container to the document
+        document.querySelector(".news-injection-point").appendChild(buttonsContainer)
+    }
+
     // Handles the dynamic creation of the news sub-page
     async function newsLoader() {
+        // Ensure that the page hasn't been created already            
         try {
             const response = await fetch("/sub-pages/news/content/news-items.html")
-            
+
             if (!response.ok) // If the response is not ok, then throw an error
                 throw new Error(`Error: ${response.status}`)
-            
-            const newsItemsHTML = response.text()
+
+            const newsItemsHTML = await response.text()
 
             const newsItemsDoc = HTMLparser.parseFromString(newsItemsHTML, "text/html")
 
             const allNewsItems = newsItemsDoc.querySelectorAll(".news-item-list .news-item-container")
-            
+
             // Converts the allNewItems node list to an array so that it can be sorted
             const allNewsItemsArr = Array.from(allNewsItems)
 
@@ -47,7 +178,7 @@
             allNewsItemsArr.sort((element1, element2) => {
                 const dateElement1 = element1.querySelector(".news-item-date") // Selects the element, now just sort by dates!
                 const dateElement2 = element2.querySelector(".news-item-date") // /\
-                
+
                 try {
                     // As long as the dates are in the format  YYYY-MM-DD, the Date.parse function will work
                     // dateElement1 is an HTML element, textContent returns the text between the HTML tags, .replace(/\s+/g, '') replaces all of the
@@ -59,19 +190,25 @@
                     // There are 3 cases: If the dates are equal, then there order does not matter
                     // If date 2 is greater than date 1, then date 2 should come before date
                     // Else, if date 2 is less than date 1, then date 2 should be after date 1
-                    return dateObj1 - dateObj2
-                } catch (err) { // Added just in-case an improper date is inputted into one of the news items
+                    return dateObj2 - dateObj1
+                } catch (err) {
+                    // Added just in-case an improper date is inputted into one of the news items (An error will be shown when the improper date is inputted)
                     console.error(err)
                 }
             })
 
-            // Now for each element, load them onto the webpage!
-            allNewsItemsArr.forEach(element => {
+            // Pack all the elements into smaller arrays where each array holds multiple news-items (HTML elements)
+            const packedNewsItems = packNewsItems(allNewsItemsArr)
 
-            })
+            archiveButtonsRenderer(packedNewsItems)
+
+            // Render the first page
+            renderNewsPages(packedNewsItems[0])
+
         } catch (err) {
             console.error(err.message)
         }
+
     }
 
     // Handles the fetching of sub-pages and injecting in the right location
@@ -149,7 +286,7 @@
     }
 
     // When the page loads, the subPageFetcher should set the current sub-page based off the hash (#) in the url
-    document.addEventListener("DOMContentLoaded", _ => {        
+    document.addEventListener("DOMContentLoaded", _ => {
         // The hash or page ID (#) for the current window is used to determine the current sub-page
         const pageID = window.location.hash
         fetchSubPageFromID(pageID)
