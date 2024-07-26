@@ -12,10 +12,10 @@
 
     // The mapping of each id to a sub-page's directory/folder
     const pageMapping = {
-        ["home-page"]: "/sub-pages/home", // TODO Must be updated before being deployed!
-        ["team-page"]: "/sub-pages/team", // Must be updated before being deployed!
-        ["news-page"]: "/sub-pages/news", // Must be updated before being deployed!
-        ["pub-page"]: "/sub-pages/pub-and-pre" // Must be updated before being deployed!
+        ["home-page"]: "/ThinIceProject/sub-pages/home", // TODO Must be updated before being deployed!
+        ["team-page"]: "/ThinIceProject/sub-pages/team", // Must be updated before being deployed!
+        ["news-page"]: "/ThinIceProject/sub-pages/news", // Must be updated before being deployed!
+        ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre" // Must be updated before being deployed!
     }
 
 
