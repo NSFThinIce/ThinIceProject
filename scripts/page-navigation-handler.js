@@ -160,7 +160,7 @@
     async function newsLoader() {
         // Ensure that the page hasn't been created already            
         try {
-            const response = await fetch("/sub-pages/news/content/news-items.html")
+            const response = await fetch(`${pageMapping["news-page"]}/content/news-items.html`)
 
             if (!response.ok) // If the response is not ok, then throw an error
                 throw new Error(`Error: ${response.status}`)
