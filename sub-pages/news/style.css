@@ -51,7 +51,7 @@ button.news-archive-button:hover {
 
 
 
-img {
+img.background-image {
     background-image: url("../../images/home/Mohonk.jpg");
     background-size: cover;
     background-position: center;
@@ -63,5 +63,4 @@ img {
     width: 100%;
     height: 100%;
     z-index: -1;
-    
 }
