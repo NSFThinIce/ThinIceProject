@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US"> <!-- The default language is the English - United States -->
-    <head>
-        <meta charset="utf-8"/> <!-- Using UTF-8 allows us to support characters from the vast majority of languages in the world -->
-        <meta name="viewport" content="width=device-width,initial-scale=1"/> <!-- MAY NOT BE NECESSARY - This forces the browser to render the page at the width of the 
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Using UTF-8 allows us to support characters from the vast majority of languages in the world -->
+    <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- MAY NOT BE NECESSARY - This forces the browser to render the page at the width of the 
                                                                 "viewport" to prevent content from being scaled down by the browser which can make some
                                                                 content illegible -->
 
-        <title>Thin Ice Project - Homepage</title> <!--  Set the default title for the homepage -->
-        <link rel="icon" href="images/favicon.ico"> <!-- Sets the icon that will appear in the browser tab -->
-        <link href="main.css" rel="stylesheet"/> <!-- The default stylesheet used to transform the webpage -->
-        <link class="css-page-link" rel="stylesheet"> <!-- This link is used to store the individual stylesheets of each page-->
-    </head>
+    <title>Thin Ice Project - Homepage</title> <!--  Set the default title for the homepage -->
+    <link rel="icon" href="images/favicon.ico"> <!-- Sets the icon that will appear in the browser tab -->
+    <link href="main.css" rel="stylesheet" /> <!-- The default stylesheet used to transform the webpage -->
+    <link class="css-page-link" rel="stylesheet">
+    <!-- This link is used to store the individual stylesheets of each page-->
+</head>
 
-    <body>
-        <!-- <img src="images/favicon.ico" alt="The logo for the Thin Ice Project"> -->
-         <!-- The navigation bar is stored within the nav tags to help those who use assistive technology like screen readers to view content -->
-         <nav>
-            <!-- Below is the contents of the navigation bar -->
-            <div class="navbar">
-                <div class="hamburger-and-home-button">
-                    <button class="navbar-toggle">
-                        <img src="images/navbar/bars-solid.svg" alt="Three vertical bars used to open the menu"/>
-                    </button>
-                    <!-- A note: All links (href) cannot point to another page (index.html) because it will cause a change of the page
+<body>
+    <!-- <img src="images/favicon.ico" alt="The logo for the Thin Ice Project"> -->
+    <!-- The navigation bar is stored within the nav tags to help those who use assistive technology like screen readers to view content -->
+    <nav>
+        <!-- Below is the contents of the navigation bar -->
+        <div class="navbar">
+            <div class="hamburger-and-home-button">
+                <button class="navbar-toggle">
+                    <img src="images/navbar/bars-solid.svg" alt="Three vertical bars used to open the menu" />
+                </button>
+                <!-- A note: All links (href) cannot point to another page (index.html) because it will cause a change of the page
                      which will most likely cause any existing fetches (fetch(url).then(blah)) in scripts to fail! -->
-                    <a id="home-page" class="text-link image-link" href="#home">
-                        <img src="images/favicon.ico"/>
-                        Thin Ice Project
-                    </a>
-                </div>
-                <div class="other-links">
-                    <a id="team-page" class="text-link" href="#team">Team</a>
-                    <a id="news-page" class="text-link" href="#news">News</a>
-                    <a id="pub-page" class="text-link" href="#publications&amp;presentations">Publications & Presentations</a>
-                </div>
+                <a id="home-page" class="text-link image-link" href="#home">
+                    <img src="images/favicon.ico" />
+                    Thin Ice Project
+                </a>
             </div>
-         </nav>
-         <!-- The main content goes into here -->
-         <main class="main-content">
-            
-         </main>
-         <!-- Scripts are referenced here -->
-          <script defer src="scripts/globals.js"></script> <!-- Makes it so the global variables are loaded first -->
-         <script defer src="scripts/page-navigation-handler.js"></script> <!-- Defer is used to ensure this script is loaded before other content is loaded like images -->
-                                                                          <!-- This script handles showing actual content to the user so it's important that it is shown at all times-->
-         <script src="scripts/navbar/toggle-navbar-view.js"></script>
-    </body>
+            <div class="other-links">
+                <a id="team-page" class="text-link" href="#team">Team</a>
+                <a id="news-page" class="text-link" href="#news">News</a>
+                <a id="pub-page" class="text-link" href="#publications&amp;presentations">Publications &
+                    Presentations</a>
+            </div>
+        </div>
+    </nav>
+    <!-- The main content goes into here -->
+    <main class="main-content">
+
+    </main>
+    <!-- Scripts are referenced here -->
+    <script defer src="scripts/globals.js"></script> <!-- Makes it so the global variables are loaded first -->
+    <script defer src="scripts/page-navigation-handler.js"></script>
+    <!-- Defer is used to ensure this script is loaded before other content is loaded like images -->
+    <!-- This script handles showing actual content to the user so it's important that it is shown at all times-->
+    <script src="scripts/navbar/toggle-navbar-view.js"></script>
+</body>
 
 </html>
-
