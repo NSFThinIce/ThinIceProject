@@ -11,13 +11,24 @@
     const stylesheetLink = document.querySelector('.css-page-link')
 
     // The mapping of each id to a sub-page's directory/folder
-    const pageMapping = {
-        ["home-page"]: "/ThinIceProject/sub-pages/home", // TODO Must be updated before being deployed!
-        ["team-page"]: "/ThinIceProject/sub-pages/team", // Must be updated before being deployed!
-        ["news-page"]: "/ThinIceProject/sub-pages/news", // Must be updated before being deployed!
-        ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre" // Must be updated before being deployed!
+    // The mapping should change when in debug mode
+    let pageMapping
+    if (DEBUG === true) {
+        pageMapping = {
+            ["home-page"]: "/sub-pages/home", 
+            ["team-page"]: "/sub-pages/team",
+            ["news-page"]: "/sub-pages/news",
+            ["pub-page"]: "/sub-pages/pub-and-pre"
+        }
+    } else {
+        pageMapping = {
+            ["home-page"]: "/ThinIceProject/sub-pages/home", 
+            ["team-page"]: "/ThinIceProject/sub-pages/team",
+            ["news-page"]: "/ThinIceProject/sub-pages/news",
+            ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre"
+        }
     }
-
+        
 
     // Grabs news-items from news-items.html
     // Then store all of the news-item-containers items into an array

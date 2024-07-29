@@ -20,6 +20,6 @@
     })
 
     window.addEventListener('resize', () => {
-
+        // TODO when the user re-enters desktop mode; remove the stylesheet attached to the HTML element
     })
 }
