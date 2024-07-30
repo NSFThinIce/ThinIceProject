@@ -32,11 +32,16 @@ body {
 
 }
 
+p {
+    padding-bottom: 20px
+}
+
 
 h1 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 h2 {
