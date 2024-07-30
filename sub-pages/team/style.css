@@ -3,13 +3,6 @@
 body {
     font-family: Arial, sans-serif;
     color: #fff;
-    background: url("../../images/home/Mohonk.jpg");
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(10px);
 }
 
 
