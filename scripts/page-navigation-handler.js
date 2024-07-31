@@ -29,7 +29,7 @@
         }
     }
         
-
+    // TODO-POTENTIAL split the code that NewsLoader depends on into a separate file for organizing the codebase
     // Grabs news-items from news-items.html
     // Then store all of the news-item-containers items into an array
     // Sort the array based on the date of the item
@@ -71,6 +71,7 @@
     
     // Handles the "rendering" of the news pages
     // Takes an array of news items and places them onto the webpage
+    // TODO Add an element that will add a visual separator between news items
     function renderNewsPages(newsItemsArr) {
         // Where the news items will be injected to
         const newsInjectionPoint = document.querySelector(".news-injection-point")
@@ -105,10 +106,10 @@
             contentElement.classList.add("news-item-content")
 
             // Set the inner HTML of the new elements to the inner HTML of the queried elements
-            titleElement.innerHTML = newsTitle.innerHTML
-            dateElement.innerHTML = newsDate.innerHTML
-            authorsElement.innerHTML = newsAuthors.innerHTML
-            contentElement.innerHTML = newsContent.innerHTML
+            titleElement.innerHTML = newsTitle.textContent // Only contains text
+            dateElement.innerHTML = newsDate.textContent // Only contains text
+            authorsElement.innerHTML = `Written by: ${newsAuthors.textContent}` // Only contains text
+            contentElement.innerHTML = newsContent.innerHTML // Can contain images/other HTML elements
 
             // Add the items to the container
             newsContainer.appendChild(titleElement)
@@ -120,6 +121,7 @@
         })
     }
 
+    // TODO Have buttons follow the format: Month, Year like July, 2024
     // Constructs the buttons that will load up the individual news pages
     function archiveButtonsRenderer(newsItemsArr) {
         // This element will hold all of the buttons
