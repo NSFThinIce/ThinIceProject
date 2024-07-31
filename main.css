@@ -16,16 +16,14 @@ body {
 
 /***** Background Image *****/
 .background-image {
-    background-image: url("images/home/Mohonk.jpg");
-    position: fixed; 
-    background-size: cover;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-    width: 100%;
+    position: fixed; /* Causes the image to not be a part of the normal document which causes it to not push anything */
+    z-index: -1; /* Puts the image behind all of the elements when they are drawn onto the page */
+    top: 0px; /* Ensures the image is placed at the top of the page when it's rendered */
+    object-fit: cover; /* Resizes the image so that it keeps it's aspect ratio, but! 
+                        if it's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit (from MDN web docs) */
+    filter: blur(5px); /* Blurs the background */ 
+    width: 100%; /* Sets the size of the image to 100% of the body's width and height */
     height: 100%;
-    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-    filter: blur(5px);
 }
 
 /***** Navigation Bar *****/
