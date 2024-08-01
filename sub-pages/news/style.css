@@ -4,11 +4,10 @@
     display: flex; /* Turns this div into a flex container which allows us to have the 
                       browser automatically manage the formatting of content */ 
     flex-direction: column; /* Sets the direction to column (Up/down) */
-    justify-content: center; /* Centers each news-item */
 }
 
 .buttons-container {
-    background-color: #00000020;
+    background-color: #00000020; /* Sets the background color for the buttons */
     position: sticky; /* Makes it so the buttons come down the page while scrolling */
     top: 0px; /* Keeps the elements 0px from the bottom of the page */
     display: flex; /* Makes it so the web broswer automatically orders items on the screen for us */
@@ -26,7 +25,7 @@ button.news-archive-button {
 }
 
 button.news-archive-button.current-news-page {
-    font-weight: bold;
+    font-weight: bold; /* Makes the font bold when it's being hovered over */
 }
 
 button.news-archive-button:hover {
@@ -37,13 +36,16 @@ button.news-archive-button:hover {
 .news-item-container {
     display: flex; /* Makes it so the web broswer automatically orders items on the screen for us */
     flex-direction: column; /* Sets the direction to column (Up/down) */
-    justify-content: center; /* Centers the items */
     text-align: center; /* Centers the text */
     gap: .75em 0em; /* Sets a gap between the elements */
     padding: 1em 0 5em 0; /* Adds padding to the bottom of each news item to make them look separate */
+    max-width: 50em; /* Ensures the items in the container don't consume as much horizontal space as it wants */
+    align-self: center; /* Ensures each news item centers itself along the horizontal axis */
 }
 
 .news-item-container .news-item-title {
     font-size: xx-large; /* Sets the font size */
     font-weight: bold; /* Makes the font bold */
+    max-width: 20em; /* Makes it so that the title is not as wide as the content in the news item */
+    align-self: center; /* Makes it so that the element is centered in the news item container */
 }
