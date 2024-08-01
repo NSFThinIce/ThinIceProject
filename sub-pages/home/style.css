@@ -1,58 +1,76 @@
+/* TODO Make CSS respond to changes in viewport size (make it mobile friendly) */
 .team-members-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
+    display: flex; /* Turns the team members container to a flexbox */
+    flex-direction: column; /* Sets the direction to column (up/down) */
+    align-items: center; /* Centers (across the horizontal axis) all of the tags that are descendants of this tag */
+    color: #fff; /* Sets the default color for the fonts to white */
 }
 
-.team-members-title {
-    font-weight: bold;
-    font-size: xx-large;
+.team-members-container .team-members-title {
+    font-weight: bold; /* Bolds the title */
+    font-size: xx-large; /* Sets the font size to xx-large */
+    margin: 0; /* Removes the margins created because it's header */
+    padding: 1em; /* Add padding to make the title not be near other elements */
 }
 
 /***** CSS for PI'S *****/
 .team-members-container .pi-members-title {
-    font-size: large;
-    font-weight: bold;
-    padding: 1em;
+    font-size: large; /* Sets the font size to large */
+    font-weight: bold; /* Bolds the font */
+    padding: 0em 0em 1em 0em; /* Adds padding to the pi-members-title tag */
+    margin: 0; /* Removes the margins created because it's header */
 }
 
-.team-members-container .pi-members {
-    display: flex;
-    flex-direction: row;
-    gap: 0em 1em;
-    max-width: 60%;
+.team-members-container .pi-members-container {
+    display: flex; /* Turns the pi-members-container to a flexbox */
+    flex-direction: row; /* Sets the direction to row */
+    gap: 0em 1em; /* Adds horizontal gap between elements */
+    max-width: 85%; /* Sets the maximum width of the pi-members-container to 85% of the page */
 }
 
 .team-members-container .pi-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 1;
+    display: flex; /* Turns the pi-member tags to flexboxes */
+    flex-direction: column; /* Sets the direction to column */
+    align-items: center; /* Centers (across the horizontal axis) all of the tags that are descendants of this tag */
+    text-align: center; /* Centers the text */
+    flex: 1; /* Ensures the size of each pi-member stays the same */
 }
 
 /* Customization made to PI'S individual boxes */
 .pi-member .pi-member-image {
-    height: 90px;
-    width: 90px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 85%;
-    padding: 0.5%;
-    background-color: #fff;
+    height: 100px; /* Sets the size of a pi-member-image */
+    width: 100px;
+    object-fit: cover; /* Resizes the image so that it keeps it's aspect ratio, but! 
+                        if it's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit (from MDN web docs) */
+    border-radius: 85%; /* Adds a circular border */
+    padding: 1px; /* Adds a little bit of padding (this is the white border) */
+    background-color: #fff; /* Sets the background color */
+}
+
+/* Dr. Rebecca North's image gets partially cropped, therefore it needs to be pushed down slightly */
+.pi-member .rebecca-norths-image {
+    object-position: 1px -5px; /* Centers Dr. Rebecca North's image */
 }
 
 .pi-member .pi-member-description {
-    /* font-weight: bold; */
-    font-size: medium;
-    /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
-
+    font-size: medium; /* Sets the font size */
 }
 
 /**** Other Collaborators CSS *****/
 .team-members-container .other-collaborators-title {
-    font-weight: bold;
-    font-size: large;
-    padding: 1em;
+    font-weight: bold; /* Bolds the font */
+    font-size: large; /* Sets the font size */
+    padding: 1em; /* Adds padding to other-collaborators-title */
+    margin: 0; /* Removes the margins created because it's header */
+}
+
+.team-members-container .other-collaborators-container {
+    display: grid; /* Turns this container into a grid */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Creates four columns of equal size */
+    gap: 0em 3em; /* Adds horizontal space between elements */
+    text-align: center; /* Centers text for all descendants */
+}
+
+.other-collaborators-container .other-member {
+    font-size: medium; /* Set the font size for the other-member tags */
 }
