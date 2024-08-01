@@ -43,6 +43,10 @@ button.news-archive-button:hover {
     align-self: center; /* Ensures each news item centers itself along the horizontal axis */
 }
 
+.news-item-container-not-top {
+    border-top: #b7b7b7 solid 1px; /* Adds a bar for the border to separate news items */
+}
+
 .news-item-container .news-item-title {
     font-size: xx-large; /* Sets the font size */
     font-weight: bold; /* Makes the font bold */

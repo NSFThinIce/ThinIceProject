@@ -16,14 +16,14 @@
     if (DEBUG === true) {
         pageMapping = {
             ["home-page"]: "/sub-pages/home", 
-            ["team-page"]: "/sub-pages/team", // TODO Delete the team page!
+            ["team-page"]: "/sub-pages/team", // TODO?? Delete the team page!
             ["news-page"]: "/sub-pages/news",
             ["pub-page"]: "/sub-pages/pub-and-pre"
         }
     } else {
         pageMapping = {
             ["home-page"]: "/ThinIceProject/sub-pages/home", 
-            ["team-page"]: "/ThinIceProject/sub-pages/team", // TODO Delete this
+            ["team-page"]: "/ThinIceProject/sub-pages/team", // TODO?? Delete this
             ["news-page"]: "/ThinIceProject/sub-pages/news",
             ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre"
         }
@@ -68,10 +68,22 @@
 
         return packedArr
     }
+
+    // Used to convert a month from a number to a string
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    // Transforms a date from the format YYYY-MM-DD to Month Day, Year
+    function prettyDate(dateString) {
+        // As long as the dates are in the format  YYYY-MM-DD, the Date.parse function will work
+        // new Date constructs a Date object, dateString is a string, .replace(/\s+/g, '') replaces all of the
+        // strings that match the RegEx /\s+/g (all whitespace characters) with nothing (that's what the '' is)
+        // This is to remove any \n (newlines) or any random spaces that are placed between the tags 
+        const dateObj = new Date(Date.parse(`${dateString.replace(/\s+/g, '')} UTC-4`)) // TODO-FUTURE-MAJOR As the project gets larger, add support for more timezones!
+        return `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`
+    }
     
     // Handles the "rendering" of the news pages
     // Takes an array of news items and places them onto the webpage
-    // TODO Add an element that will add a visual separator between news items
     function renderNewsPages(newsItemsArr) {
         // Where the news items will be injected to
         const newsInjectionPoint = document.querySelector(".news-injection-point")
@@ -84,10 +96,20 @@
             })
         }
 
+        // Used to determine if this is the first element in the list
+        let isFirstElement = true
+
         // Add the new news items
         newsItemsArr.forEach(newsItem => {
             const newsContainer = document.createElement("div")
             newsContainer.classList.add("news-item-container")
+
+            if (isFirstElement)
+                isFirstElement = false
+            else
+                // If it's not the first element, then it's not at the top
+                newsContainer.classList.add("news-item-container-not-top")
+            
 
             // Query the elements so that their contents can be inputted into the new elements created below
             const newsDate = newsItem.querySelector(".news-item-date")
@@ -98,8 +120,6 @@
             // Create the elements to be loaded onto the page
             const titleElement = document.createElement("div")
             titleElement.classList.add("news-item-title")
-            const dateElement = document.createElement("div")
-            dateElement.classList.add("news-item-date")
             const authorsElement = document.createElement("div")
             authorsElement.classList.add("news-item-authors")
             const contentElement = document.createElement("div")
@@ -107,13 +127,11 @@
 
             // Set the inner HTML of the new elements to the inner HTML of the queried elements
             titleElement.innerHTML = newsTitle.textContent // Only contains text
-            dateElement.innerHTML = newsDate.textContent // Only contains text
-            authorsElement.innerHTML = `Written by: ${newsAuthors.textContent}` // Only contains text
+            authorsElement.innerHTML = `Written by: ${newsAuthors.textContent} on ${prettyDate(newsDate.textContent)}` // Only contains text
             contentElement.innerHTML = newsContent.innerHTML // Can contain images/other HTML elements
 
             // Add the items to the container
             newsContainer.appendChild(titleElement)
-            newsContainer.appendChild(dateElement)
             newsContainer.appendChild(contentElement)
             newsContainer.appendChild(authorsElement)
             
@@ -197,13 +215,13 @@
                     // dateElement1 is an HTML element, textContent returns the text between the HTML tags, .replace(/\s+/g, '') replaces all of the
                     // strings that match the RegEx /\s+/g (all whitespace characters) with nothing (that's what the '' is)
                     // This is to remove any \n (newlines) or any random spaces that are placed between the tags 
-                    const dateObj1 = Date.parse(`${dateElement1.textContent.replace(/\s+/g, '')} UTC-4`)
-                    const dateObj2 = Date.parse(`${dateElement2.textContent.replace(/\s+/g, '')} UTC-4`)
+                    const timeStamp1 = Date.parse(`${dateElement1.textContent.replace(/\s+/g, '')} UTC-4`) // TODO-FUTURE-MAJOR As the project gets larger, add support for more timezones!
+                    const timeStamp2 = Date.parse(`${dateElement2.textContent.replace(/\s+/g, '')} UTC-4`)
 
                     // There are 3 cases: If the dates are equal, then there order does not matter
                     // If date 2 is greater than date 1, then date 2 should come before date
                     // Else, if date 2 is less than date 1, then date 2 should be after date 1
-                    return dateObj2 - dateObj1
+                    return timeStamp2 - timeStamp1
                 } catch (err) {
                     // Added just in-case an improper date is inputted into one of the news items (An error will be shown when the improper date is inputted)
                     console.error(err)

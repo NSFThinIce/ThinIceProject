@@ -38,13 +38,13 @@
 
 /* Customization made to PI'S individual boxes */
 .pi-member .pi-member-image {
-    height: 100px; /* Sets the size of a pi-member-image */
-    width: 100px;
+    height: 120px; /* Sets the size of a pi-member-image */
+    width: 120px;
     object-fit: cover; /* Resizes the image so that it keeps it's aspect ratio, but! 
                         if it's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit (from MDN web docs) */
     border-radius: 85%; /* Adds a circular border */
-    padding: 1px; /* Adds a little bit of padding (this is the white border) */
-    background-color: #fff; /* Sets the background color */
+    border: solid 2px #fff; /* Creates a 2px border */
+    background-color: #fff; /* Because some images are moved slightly to center the image, this is added to hide any imperfections */
 }
 
 /* Dr. Rebecca North's image gets partially cropped, therefore it needs to be pushed down slightly */
@@ -66,9 +66,10 @@
 
 .team-members-container .other-collaborators-container {
     display: grid; /* Turns this container into a grid */
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* Creates four columns of equal size */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Creates five columns of equal size */
     gap: 0em 3em; /* Adds horizontal space between elements */
     text-align: center; /* Centers text for all descendants */
+    max-width: 85%; /* Sets the maximum size for the width to keep the elements from using all of the horizontal space */
 }
 
 .other-collaborators-container .other-member {
