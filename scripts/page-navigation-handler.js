@@ -16,14 +16,14 @@
     if (DEBUG === true) {
         pageMapping = {
             ["home-page"]: "/sub-pages/home", 
-            ["team-page"]: "/sub-pages/team", // TODO?? Delete the team page!
+            ["team-page"]: "/sub-pages/team",
             ["news-page"]: "/sub-pages/news",
             ["pub-page"]: "/sub-pages/pub-and-pre"
         }
     } else {
         pageMapping = {
             ["home-page"]: "/ThinIceProject/sub-pages/home", 
-            ["team-page"]: "/ThinIceProject/sub-pages/team", // TODO?? Delete this
+            ["team-page"]: "/ThinIceProject/sub-pages/team",
             ["news-page"]: "/ThinIceProject/sub-pages/news",
             ["pub-page"]: "/ThinIceProject/sub-pages/pub-and-pre"
         }
