@@ -25,7 +25,7 @@
     display: flex; /* Turns the pi-members-container to a flexbox */
     flex-direction: row; /* Sets the direction to row */
     gap: 0em 1em; /* Adds horizontal gap between elements */
-    max-width: 85%; /* Sets the maximum width of the pi-members-container to 85% of the page */
+    width: 85%; /* Sets the width of the pi-members-container to 85% of the page */
 }
 
 .team-members-container .pi-member {
@@ -49,7 +49,7 @@
 
 /* Dr. Rebecca North's image gets partially cropped, therefore it needs to be pushed down slightly */
 .pi-member .rebecca-norths-image {
-    object-position: 1px -5px; /* Centers Dr. Rebecca North's image */
+    object-position: 2px -2px; /* Centers Dr. Rebecca North's image */
 }
 
 .pi-member .pi-member-description {
