@@ -26,11 +26,22 @@ body {
     height: 100%;
 }
 
-/***** Navigation Bar *****/
-:root { /* Stores global variables */
-    --dist_between_a: 0.5em; /* Declares the distance between <a> (anchor) elements in the navbar */
+/* Overwriting the background image temporarily TODO Possibly take this out? */
+.background-image {
+    width: 100%;
+    height: 100%;
+    filter: none;
+    object-fit: none;
+    top: 0px;
+    z-index: -1;
+    position:fixed;
+    background: conic-gradient(#d1432d, #4786c2);
 }
 
+/***** Navigation Bar *****/
+.navbar {
+    --dist_between_a: 0.5em; /* Declares the distance between <a> (anchor) elements in the navbar */
+}
 .navbar, .navbar>.other-links {
     display: flex; /* Converts a <nav> tag to a flex container which then converts all of the items within it to flex items */
     flex-direction: row; /* Tells the browser to display the items in a row instead of a column */

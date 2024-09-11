@@ -7,14 +7,21 @@
 }
 
 .buttons-container {
+    --padding-between-elements: 1em; /* Defines the padding between buttons and the starting element (the element that contains the text content "News:") */
     background-color: #00000020; /* Sets the background color for the buttons */
     position: sticky; /* Makes it so the buttons come down the page while scrolling */
     top: 0px; /* Keeps the elements 0px from the bottom of the page */
     display: flex; /* Makes it so the web broswer automatically orders items on the screen for us */
     flex-direction: row; /* Sets the direction of the flex container to row (left/right) */
     justify-content: flex-start; /* Makes it so the content starts from the left side */
-    gap: 0em 1em; /* Adds a 1em horizontal gap between elements */
+    gap: 0em var(--padding-between-elements); /* Adds a 1em horizontal gap between elements */
     flex-wrap: wrap; /* Makes it so that the buttons will try there best to stay in the flex container */
+    align-items: center; /* Vertically centers all of the items */
+    min-height: 1.5em; /* Forces Chromium based browsers to automatically have a minimum size of 1.5em or 1.5 * the parent element's font size */
+}
+
+.buttons-container .buttons-container-label {
+    padding: 0 0 0 var(--padding-between-elements); /* Adds padding to the buttons container label ("News:") to make it so it doesn't start at the beginning */
 }
 
 button.news-archive-button {
@@ -22,6 +29,7 @@ button.news-archive-button {
     border: none; /* Removes the border from the buttons */ 
     color: white; /* Sets the default color for the fonts */
     font-size: medium; /* Sets the defualt font size */
+    padding: 0; /* Removes the default padding added to buttons */
 }
 
 button.news-archive-button.current-news-page {
