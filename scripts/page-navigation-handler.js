@@ -145,7 +145,12 @@
         // This element will hold all of the buttons
         const buttonsContainer = document.createElement("div")
         buttonsContainer.classList.add("buttons-container")
-        buttonsContainer.textContent = "News:"
+
+        const buttonsContainerLabel = document.createElement("div")
+        buttonsContainerLabel.classList.add("buttons-container-label")
+        buttonsContainerLabel.textContent = "News:"
+
+        buttonsContainer.appendChild(buttonsContainerLabel)
 
         for (let i = 0; i < newsItemsArr.length; i++) {
             const newsItems = newsItemsArr[i]
