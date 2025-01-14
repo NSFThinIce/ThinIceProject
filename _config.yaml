@@ -1,19 +1,19 @@
 # site properties and page defaults
-title: NSFThinIce
-subtitle: 
-description: An engaging 1-3 sentence description of your lab.
-header: images/background.jpg
-footer: images/background.jpg
-proofer: false
+title: Thin Ice [DRAFT]
+subtitle:
+description: # TODO Should be updated?
+header: images/background.jpg # TODO Needs to be updated
+footer: images/background.jpg # TODO Needs to be updated
+proofer: false # STODO hould be enabled after deleting some of the default files
 
 # site social media and other links
 links:
-  email: contact@NSFThinIce.com
-  orcid: 0000-0001-8713-9213
-  google-scholar: ETJoidYAAAAJ
+  # email: contact@NSFThinIce.com
+  # orcid: 0000-0001-8713-9213
+  # google-scholar: ETJoidYAAAAJ
   github: NSFThinIce
-  twitter: NSFThinIce
-  youtube: NSFThinIce
+  # twitter: NSFThinIce
+  # youtube: NSFThinIce
 
 ### jekyll settings
 
