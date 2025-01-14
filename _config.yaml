@@ -1,19 +1,14 @@
 # site properties and page defaults
 title: Thin Ice [DRAFT]
-subtitle:
-description: # TODO Should be updated?
+subtitle: # TODO Should be added?
+description: Researching how changes to ice cover impact phytoplankton structure and function # TODO Should be updated?
 header: images/background.jpg # TODO Needs to be updated
 footer: images/background.jpg # TODO Needs to be updated
 proofer: false # STODO hould be enabled after deleting some of the default files
 
 # site social media and other links
 links:
-  # email: contact@NSFThinIce.com
-  # orcid: 0000-0001-8713-9213
-  # google-scholar: ETJoidYAAAAJ
   github: NSFThinIce
-  # twitter: NSFThinIce
-  # youtube: NSFThinIce
 
 ### jekyll settings
 
