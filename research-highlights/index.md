@@ -5,10 +5,13 @@ nav:
   tooltip: Publications, Presentations, and Projects
 ---
 
-# {% include icon.html icon="fa-solid fa-feather-pointed" %}Blog
+# {% include icon.html icon="fa-solid fa-feather-pointed" %}Research Highlights
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<div style="display: flex;align-self: center;justify-content: center;">
+  <div>
+    Here researchers document their experiences on the field
+  </div>
+</div>
 
 {% include section.html %}
 

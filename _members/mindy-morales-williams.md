@@ -1,6 +1,6 @@
 ---
 name: Dr. Ana "Mindy" Morales-Williams
-image: images/team/mindy-morales-williams.jpg
+image: images/team/principal-investigators/mindy-morales-williams.jpg
 role: principal-investigator
 affiliation: Rubenstein School
 aliases:

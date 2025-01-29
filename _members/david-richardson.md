@@ -1,8 +1,7 @@
 ---
 name: Dr. David Richardson
-image: images/team/david-richardson.jpg
+image: images/team/principal-investigators/david-richardson.jpg
 role: principal-investigator
-description: Principal Investigator & Data Manager
 affiliation: SUNY New Paltz
 aliases:
   - D. Richardson

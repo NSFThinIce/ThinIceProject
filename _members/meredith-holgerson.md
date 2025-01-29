@@ -1,6 +1,6 @@
 ---
 name: Dr. Meredith Holgerson
-image: images/team/meredith-holgerson.jpg
+image: images/team/principal-investigators/meredith-holgerson.jpg
 role: principal-investigator
 affiliation: Cornell University
 aliases:

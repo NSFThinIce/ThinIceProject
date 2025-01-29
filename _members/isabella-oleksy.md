@@ -1,6 +1,6 @@
 ---
 name:  Dr. Isabella A. Oleksy
-image: images/team/isabella-oleksy.jpg
+image: images/team/principal-investigators/isabella-oleksy.jpg
 role: principal-investigator
 affiliation: University of Colorado Boulder
 aliases:

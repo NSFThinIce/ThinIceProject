@@ -1,7 +1,8 @@
 ---
 name: Dr. Rebecca North
-image: images/team/rebecca-north-cropped.jpg
+image: images/team/principal-investigators/rebecca-north-cropped.jpg
 role: principal-investigator
+description: Principal Investigator & Team Lead (?)
 affiliation: University of Missouri
 aliases:
   - R. North

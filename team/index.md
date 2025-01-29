@@ -11,8 +11,15 @@ nav:
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role == 'pi'" %}
-{% include list.html data="members" component="portrait" filter="role != 'pi'" %}
+{% include list.html data="members" component="portrait" filter="name == 'Dr. Rebecca North'" %} <!-- Have Rebecca North be first -->
+
+<!-- TODO Add section titles -->
+
+{% include list.html data="members" component="portrait" filter="role == 'principal-investigator' && name != 'Dr. Rebecca North'" %} <!-- Put PI's Next -->
+
+<!-- TODO Add section titles -->
+
+{% include list.html data="members" component="portrait" filter="role != 'principal-investigator'" %} <!-- Then, everyone else -->
 
 {% include section.html background="images/background.jpg" dark=true %}
 

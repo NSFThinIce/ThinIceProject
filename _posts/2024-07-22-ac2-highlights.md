@@ -1,11 +1,11 @@
 ---
 title: AC² Students Talk About Their Experience in The Field [DRAFT]
-author: Cyrus Mika, Waheed Saroyia, Christopher Jamieson 
+author: david-richardson, rebecca-north, isabella-oleksy
 # TODO Add the ability for multiple authors to be in one blog post
 # It should allow for this syntax to be valid:
 
 # authors: cyrus-mika, waheed-saroyia, christopher-jamieson 
-tags: ac², sampling, student-experience
+tags: student-experience
 ---
 
  
