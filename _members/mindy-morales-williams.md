@@ -5,6 +5,7 @@ role: principal-investigator
 affiliation: Rubenstein School
 aliases:
   - M. Morales-Williams
+  - Dr. Ana "Mindy" Morales-Williams
 links:
   home-page: https://www.uvm.edu/rsenr/profile/ana-mindy-morales-williams
   email: Ana.Morales@uvm.edu

@@ -7,11 +7,9 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-feather-pointed" %}Research Highlights
 
-<div style="display: flex;align-self: center;justify-content: center;">
-  <div>
-    Here researchers document their experiences on the field
-  </div>
-</div>
+<p style="display: flex;justify-content: center;">
+  Here researchers document their experiences on the field
+</p>
 
 {% include section.html %}
 

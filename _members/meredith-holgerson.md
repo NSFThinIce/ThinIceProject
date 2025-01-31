@@ -5,6 +5,7 @@ role: principal-investigator
 affiliation: Cornell University
 aliases:
   - M. Holgerson
+  - Dr. Meredith Holgerson
 links:
   home-page: https://ecologyandevolution.cornell.edu/meredith-holgerson
   email: meredith.holgerson@cornell.edu

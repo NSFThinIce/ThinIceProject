@@ -7,34 +7,37 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-users" %}Team
 
-<!-- TODO Add a description -->
-
-{% include section.html %}
-
-{% include list.html data="members" component="portrait" filter="name == 'Dr. Rebecca North'" %} <!-- Have Rebecca North be first -->
-
-<!-- TODO Add section titles -->
-
-{% include list.html data="members" component="portrait" filter="role == 'principal-investigator' && name != 'Dr. Rebecca North'" %} <!-- Put PI's Next -->
-
-<!-- TODO Add section titles -->
-
-{% include list.html data="members" component="portrait" filter="role != 'principal-investigator'" %} <!-- Then, everyone else -->
+{%
+  include figure.html
+  image="images/figures/proposal-map.jpg"
+  caption="The locations of each principal investigator's research centers"
+%}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<p style="display: flex;justify-content: center; font-weight: bold; font-size: 1.5rem">
+  Principal Investigators
+</p>
 
-{% include section.html %}
+{%
+  include section.html
+  background="images/more-backgrounds/background-1.jpg"
+  size=wide
+%}
+{% include list.html data="members" component="portrait" filter="name == 'Dr. Rebecca North'" %} <!-- Have Rebecca North be first -->
 
-{% capture content %}
+{% include list.html data="members" component="portrait" filter="role == 'principal-investigator' && name != 'Dr. Rebecca North'" %} <!-- Put PI's Next -->
 
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
+{% include section.html background="images/background.jpg" dark=true %}
 
-{% endcapture %}
+<p style="display: flex;justify-content: center; font-weight: bold; font-size: 1.5rem">
+  Undergraduates, Graduates, Post-Graduates, Lab Managers, Other Collaborators
+</p>
 
-{% include grid.html style="square" content=content %}
+{%
+  include section.html
+  background="images/more-backgrounds/background-2.jpg"
+  size=wide
+%}
+
+{% include list.html data="members" component="portrait" filter="role != 'principal-investigator'" %} <!-- Then, everyone else -->

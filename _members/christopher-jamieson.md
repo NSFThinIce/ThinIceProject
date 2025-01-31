@@ -5,6 +5,7 @@ role: programmer
 affiliation: SUNY New Paltz
 aliases:
   - C. Jamieson
+  - Christopher Jamieson
 links:
   email: jamiesoc2@newpaltz.edu
 ---

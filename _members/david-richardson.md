@@ -5,6 +5,7 @@ role: principal-investigator
 affiliation: SUNY New Paltz
 aliases:
   - D. Richardson
+  - Dr. David Richardson
 links:
   home-page: https://hawksites.newpaltz.edu/richardd/bio/
   email: richardsond@newpaltz.edu

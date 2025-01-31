@@ -6,6 +6,7 @@ description: Principal Investigator & Team Lead (?)
 affiliation: University of Missouri
 aliases:
   - R. North
+  - Dr. Rebecca North
 links:
   home-page: https://www.researchgate.net/profile/Rebecca-North-2
   email: northr@missouri.edu
