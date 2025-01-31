@@ -1,6 +1,6 @@
 ---
 name: Christopher Jamieson
-image: images/team/christopher-jamieson.jpg
+image: images/team/collaborators/christopher-jamieson.jpg
 role: programmer
 affiliation: SUNY New Paltz
 aliases:

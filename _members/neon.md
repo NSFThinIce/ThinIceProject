@@ -1,6 +1,6 @@
 ---
 name: National Ecological Observatory Network (NEON)
-# image: undefined
+image: images/team/collaborators/neon-logo.svg
 role: 
 description: Collaborative Organization
 aliases:
