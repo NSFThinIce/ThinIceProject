@@ -1,12 +1,12 @@
 ---
-name: Cyrus Mika
-image: images/team/collaborators/cyrus-head shot.jpeg
+name: Sophia Weg
+image: images/team/collaborators/Sophia-head shot.jpeg
 
 role: undergrad
 affiliation: SUNY New Paltz
 aliases:
-  - C. Mika
-  - Cyrus Mika
+  - S. Weg
+  - Sophia Weg
 links:
   # email: undefined
 ---

@@ -1,6 +1,6 @@
 ---
 name: Waheed Saroyia
-# image: undefined
+image: images/team/collaborators/Waheed-head shot.Jpeg
 role: undergrad
 affiliation: SUNY Buffalo (?)
 aliases:

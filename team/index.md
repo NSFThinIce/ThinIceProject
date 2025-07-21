@@ -5,14 +5,6 @@ nav:
   tooltip: About our team
 ---
 
-# {% include icon.html icon="fa-solid fa-users" %}Team
-
-{%
-  include figure.html
-  image="images/figures/proposal-map.jpg"
-  caption="The locations of each principal investigator's research centers"
-%}
-
 {% include section.html background="images/background.jpg" dark=true %}
 
 <p style="display: flex;justify-content: center; font-weight: bold; font-size: 1.5rem">
