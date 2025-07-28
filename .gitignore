@@ -12,3 +12,8 @@ package-lock.json
 yarn.lock
 node_modules
 .ruby-version
+Gemfile.lock
+_cite/.cache/cache.db
+_cite/.cache/cache.db
+Gemfile.lock
+/_cite/.cache
