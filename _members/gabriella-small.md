@@ -3,7 +3,7 @@ name: Gabriella Small
 # image: undefined
 role: undergrad, AC^2 Student
 affiliation: SUNY New Paltz
-role: lab assistant, website editor
+role: undergrad
 aliases:
   - G. Small
   - Gabby Small
